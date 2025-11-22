@@ -1,54 +1,99 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mi Página</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página para mi mejor amiga</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <h1>Bienvenido a mi página</h1>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header class="card">
+      <div class="avatar">
+        <img id="avatarImg" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=800&auto=format&fit=crop" alt="Foto">
+      </div>
 
-  <section id="inicio" class="hero">
-    <h2>Crea tu sitio web fácilmente</h2>
-    <p>Esta es una plantilla simple hecha con HTML y CSS en archivos separados.</p>
-    <a href="#contacto" class="btn">Contáctame</a>
-  </section>
+      <div class="title">
+        <h1 id="friendName">Mi mejor amiga</h1>
+        <p class="lead" id="tagline">Una página hecha con cariño 💖</p>
+      </div>
 
-  <section id="servicios" class="features">
-    <div class="card">
-      <h3>Rápido</h3>
-      <p>Diseño ligero y fácil de cargar.</p>
-    </div>
-    <div class="card">
-      <h3>Responsive</h3>
-      <p>Funciona bien en teléfonos y computadoras.</p>
-    </div>
-    <div class="card">
-      <h3>Editable</h3>
-      <p>Personaliza colores, textos y estilos.</p>
-    </div>
-  </section>
+      <div class="controls">
+        <button class="btn" id="editBtn">Editar</button>
+        <button class="btn ghost" id="printBtn">Imprimir/Guardar</button>
+      </div>
+    </header>
 
-  <section id="contacto" class="contact">
-    <h2>Contacto</h2>
-    <form>
-      <input type="text" placeholder="Tu nombre">
-      <input type="email" placeholder="Tu correo">
-      <textarea placeholder="Tu mensaje"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <main class="grid">
+      <section>
+        <div class="card about">
+          <h3>Sobre ella</h3>
+          <div id="aboutText" contenteditable="false">
+            Escribe aquí una descripción bonita sobre tu amiga.
+          </div>
+        </div>
 
-  <footer>
-    <p>© 2025 — Tu sitio web</p>
-  </footer>
+        <div class="card">
+          <h3>Galería</h3>
+          <div class="gallery" id="gallery">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop"></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"></div>
+          </div>
+
+          <label>Agregar URL de imagen</label>
+          <div class="img-add-box">
+            <input id="imgUrl" type="text" placeholder="https://..." />
+            <button class="btn" id="addImg">Añadir</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Canción favorita</h3>
+          <p id="songText">Pega aquí un enlace de Spotify o escribe una canción.</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Mensajes para ella</h3>
+          <div class="messages" id="messages"></div>
+
+          <label>Tu nombre</label>
+          <input id="author" type="text">
+
+          <label>Mensaje</label>
+          <textarea id="msg" rows="3"></textarea>
+
+          <div class="msg-buttons">
+            <button class="btn" id="sendMsg">Enviar</button>
+            <button class="btn ghost" id="clearMsgs">Borrar todo</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Detalles rápidos</h3>
+
+          <label>Color principal</label>
+          <input id="colorInput" type="color" value="#ff6fa3">
+
+          <label>Nombre de la amiga</label>
+          <input id="nameInput" type="text" placeholder="Ej: Valentina">
+
+          <div class="msg-buttons">
+            <button class="btn" id="applyStyle">Aplicar</button>
+            <button class="btn ghost" id="resetBtn">Restablecer</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Hecho con ❤️ para una mejor amiga especial.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
+
