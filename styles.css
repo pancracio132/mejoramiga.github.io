@@ -1,133 +1,144 @@
-:root {
-  --bg:#fff7fb;
-  --card:#ffffff;
-  --accent:#ff6fa3;
-  --muted:#6b6b6b;
-  --radius:14px;
-  --shadow:0 8px 30px rgba(12,12,20,0.08);
+/* Tipografía limpia y animación suave */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-* { box-sizing:border-box }
-
-body {
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:linear-gradient(180deg,#fff,var(--bg));
-  padding:28px;
-  color:#222;
+/* Fondo animado tipo galaxia rosada */
+.bg-animado {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 20% 20%, #ffb3dc, #ff66b3, #a4006a);
+    z-index: -1;
+    animation: movimiento 12s infinite alternate ease-in-out;
 }
 
-.container {
-  max-width:1000px;
-  margin:auto;
+@keyframes movimiento {
+    0% { filter: hue-rotate(0deg) blur(0px); }
+    50% { filter: hue-rotate(40deg) blur(2px); }
+    100% { filter: hue-rotate(0deg) blur(0px); }
 }
 
 header {
-  display:flex;
-  gap:20px;
-  align-items:center;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
 }
 
-.card {
-  background:var(--card);
-  padding:16px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+.titulo {
+    font-size: 3rem;
+    font-weight: 600;
+    animation: aparecer 1.5s ease;
 }
 
-.avatar {
-  width:120px;
-  height:120px;
-  overflow:hidden;
-  border-radius:20px;
-}
-.avatar img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.subtitulo {
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-.title h1 { margin:0 }
-.lead { margin:5px 0; color:var(--muted) }
-
-.btn {
-  background:var(--accent);
-  color:white;
-  border:0;
-  padding:8px 12px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:600;
+/* Animación de entrada */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.btn.ghost {
-  background:transparent;
-  color:var(--accent);
-  border:1px solid #ddd;
+/* Tarjeta principal */
+.seccion-principal {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
-.controls {
-  display:flex;
-  gap:10px;
+.tarjeta {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(6px);
+    margin-bottom: 40px;
+    animation: aparecer 1.5s ease;
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:1fr 340px;
-  gap:18px;
-  margin-top:18px;
+.foto {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
-.about p { margin:0 }
-
-.gallery {
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
+.destacado {
+    color: #c2185b;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
 }
 
-.thumb {
-  width:calc(50% - 4px);
-  height:110px;
-  border-radius:10px;
-  overflow:hidden;
+.texto {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-.thumb img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  cursor:pointer;
+.frase {
+    font-style: italic;
+    color: #8a00a6;
+    font-weight: bold;
 }
 
-.messages { display:flex; flex-direction:column; gap:8px }
-.message {
-  padding:10px;
-  border-radius:10px;
-  background:#ffffffc7;
-  border:1px solid #eee;
-}
-.meta {
-  font-size:12px;
-  color:var(--muted);
+/* Galería */
+.galeria {
+    text-align: center;
+    margin: 40px 0;
+    color: white;
 }
 
-textarea, input[type=text], input[type=color] {
-  width:100%;
-  padding:8px;
-  border-radius:8px;
-  border:1px solid #ddd;
+.galeria h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
 }
 
-.msg-buttons {
-  display:flex;
-  gap:10px;
-  margin-top:10px;
+.fotos {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+.fotos img {
+    width: 30%;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.fotos img:hover {
+    transform: scale(1.07);
+}
+
+/* Carta */
+.carta {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(6px);
+    color: #4a004b;
+    animation: aparecer 1.7s ease;
+}
+
+.carta h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/* Footer */
 footer {
-  text-align:center;
-  margin-top:20px;
-  color:var(--muted);
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: white;
+    font-size: 0.9rem;
 }
-
